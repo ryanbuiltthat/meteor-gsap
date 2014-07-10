@@ -8,7 +8,7 @@ Package.on_use(function (api) {
         'header.js',
     ], 'server');
    api.add_files([
-        'vendor/GreenSock-JS/src/minified/utils/Draggable.min.js'
+        'vendor/Draggable.min.js'
     ], 'client');
     api.add_files([
         'vendor/TweenMax_client.js'
