@@ -1,8 +1,11 @@
 Package.describe({
-    summary: 'GreenSock Animation Platform : Professional-Grade HTML5 Animation.'
+    summary: 'GreenSock Animation Platform : Professional-Grade HTML5 Animation.',
+  version: "1.13.1",
+  git: "https://github.com/RoyalMist/meteor-gsap.git"
 });
 
 Package.on_use(function (api) {
+  api.versionsFrom("METEOR-CORE@0.9.0-atm");
 
     api.add_files([
         'header.js',
