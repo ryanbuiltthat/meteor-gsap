@@ -5507,7 +5507,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 				} else if (_self.frame > 10) { //don't trigger lagSmoothing if we're just waking up, and make sure that at least 10 frames have elapsed because of the iOS bug that we work around below with the 1.5-second setTimout().
 					_lastUpdate = _getTime() - _lagThreshold + 5;
 				}
-				_req = (_fps === 0) ? _emptyFunc : (!_useRAF || !_reqAnimFrame) ? function(f) { return setTimeout(f, ((_nextTime - _self.time) * 1000 + 1) | 0); } : _reqAnimFrame;
+				_req = (_fps === 0) ? _emptyFunc : (!_useRAF || !_reqAnimFrame) ? function(f) { return Meteor.setTimeout(f, ((_nextTime - _self.time) * 1000 + 1) | 0); } : _reqAnimFrame;
 				if (_self === _ticker) {
 					_tickerActive = true;
 				}
@@ -5535,7 +5535,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 			_self.fps(fps);
 
 			//a bug in iOS 6 Safari occasionally prevents the requestAnimationFrame from working initially, so we use a 1.5-second timeout that automatically falls back to setTimeout() if it senses this condition.
-			setTimeout(function() {
+			Meteor.setTimeout(function() {
 				if (_useRAF && (!_id || _self.frame < 5)) {
 					_self.useRAF(false);
 				}
@@ -5589,7 +5589,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 				if (_tickerActive && _getTime() - _lastUpdate > 2000) {
 					_ticker.wake();
 				}
-				setTimeout(_checkTimeout, 2000);
+				Meteor.setTimeout(_checkTimeout, 2000);
 			};
 		_checkTimeout();
 
@@ -6102,7 +6102,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 		_rootTimeline._startTime = _ticker.time;
 		_rootFramesTimeline._startTime = _ticker.frame;
 		_rootTimeline._active = _rootFramesTimeline._active = true;
-		setTimeout(_lazyRender, 1); //on some mobile devices, there isn't a "tick" before code runs which means any lazy renders wouldn't run before the next official "tick".
+		Meteor.setTimeout(_lazyRender, 1); //on some mobile devices, there isn't a "tick" before code runs which means any lazy renders wouldn't run before the next official "tick".
 
 		Animation._updateRoot = TweenLite.render = function() {
 				var i, a, p;
