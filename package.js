@@ -1,6 +1,6 @@
 Package.describe({
     summary: 'GreenSock Animation Platform : Professional-Grade HTML5 Animation.',
-  version: "1.13.2-beta2",
+  version: "1.13.2-beta3",
   git: "https://github.com/infinitedg/meteor-gsap/"
 });
 
@@ -20,6 +20,10 @@ Package.on_use(function (api) {
     api.add_files([
         'vendor/TweenMax_server.js'
     ], 'server');
+
+    api.add_files([
+        'vendor/GreenSock-JS/src/uncompressed/plugins/ColorPropsPlugin.js'
+    ], ['client', 'server'])
 
     // api.add_files([
     //     'exports.js',
