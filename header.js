@@ -1,2 +1,4 @@
-// windowBackup = window;
 window = { console: console };
+module = {
+	exports: {}
+};

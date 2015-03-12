@@ -11,7 +11,7 @@ Package.on_use(function (api) {
         'header.js',
     ], 'server');
    api.add_files([
-        'vendor/Draggable.min.js'
+        'vendor/Draggable.js'
     ], 'client');
     api.add_files([
         'vendor/TweenMax_client.js'
