@@ -1,6 +1,6 @@
 Package.describe({
     summary: 'GreenSock Animation Platform : Professional-Grade HTML5 Animation.',
-  version: "1.14.2",
+  version: "1.16.0",
   git: "https://github.com/infinitedg/meteor-gsap/"
 });
 
