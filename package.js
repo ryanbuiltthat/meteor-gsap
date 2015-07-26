@@ -23,6 +23,10 @@ Package.on_use(function (api) {
 
     api.add_files([
         'vendor/GreenSock-JS/src/uncompressed/plugins/ColorPropsPlugin.js'
+    ], ['client', 'server']);
+    
+    api.add_files([
+        'vendor/GreenSock-JS/src/uncompressed/plugins/ScrollToPlugin.js'
     ], ['client', 'server'])
 
     // api.add_files([
